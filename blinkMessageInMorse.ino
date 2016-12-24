@@ -1,7 +1,4 @@
-/*
- * If you want to watch how this code works, go to 
- */
-const int led = 5;
+const int led = 5;  // you can change this as any value
 const int highShort = 100;
 const int highLong = 1000;
 const int lowInterval = 300;
