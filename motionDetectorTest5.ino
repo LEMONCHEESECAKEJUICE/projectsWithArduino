@@ -32,6 +32,10 @@ void loop() {
     // make buzzer beep and LED blink for given duration (in this program, for 10 sec)
     beepWithBlink(buzzer, led, frequency, interval, 10 * 1000);
 
+    // reset LED and PIR detector
+    reset(led);
+    reset(sensor);
+
     // wait for seconds until next detection
     delay(waiting);    
   }
@@ -71,5 +75,10 @@ void beepWithBlink(int buzzer, int led, int frequency, long interval, long durat
     
     // repeat these for the given duration
   } while (millis() - initialMillis < duration);
+}
+
+// reset function sets the given pin as state of LOW
+void reset(int pin) {
+  digitalWrite(pin, LOW);
 }
 
