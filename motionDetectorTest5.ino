@@ -56,16 +56,17 @@ void beepWithBlink(int buzzer, int led, int frequency, long interval, long durat
 
       // if the LED is LOW, turn the LED on and play the buzzer
       if (ledState == LOW) {
-        ledState = HIGH;
+        digitalWrite(led, ledState = HIGH);
         tone(buzzer, frequency, interval);
         delay(interval);
       }
       // if the LED is HIGH, turn the LED and the buzzer off
       else {
-        ledState = LOW;
+        digitalWrite(led, ledState = LOW);
         noTone(buzzer);
         delay(interval);
       }
+
     }
     
     // repeat these for the given duration
